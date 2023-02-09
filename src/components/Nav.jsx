@@ -13,7 +13,7 @@ export const Nav = () => {
       </nav>
       <Routes>
         <Route path="/Inicio" element={<Inicio />}></Route>
-        <Route path="/Ejercicio" element={<Ejercicios />}></Route>
+        <Route path="/Ejercicios" element={<Ejercicios />}></Route>
       </Routes>
     </BrowserRouter>
   );
