@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-
 export const EjerciciosU = () => {
   //Para resetear
   const [contador, setContador] = useState(0);
@@ -28,21 +30,29 @@ export const EjerciciosU = () => {
 
   return (
     <>
-      <h1>Ejercicios Uno</h1>
-      <h2>Contador</h2>
-      <p className={color}>{contador}</p>
-      <ButtonGroup aria-label="Basic example">
-        <Button variant="danger" onClick={() => handleDec()}>
-          Decrementar
-        </Button>
-        {/* Otra forma de usar el click es colocando la funcion del seteo directo en arrowfunction */}
-        <Button variant="secondary" onClick={() => setContador(0)}>
-          Resetear
-        </Button>
-        <Button variant="success" onClick={() => handleInc()}>
-          Incrementar
-        </Button>
-      </ButtonGroup>
+      <Container>
+        <Row>
+          <Col>
+            <span className={color}>{contador}</span>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ButtonGroup aria-label="Basic example">
+              <Button variant="danger" onClick={() => handleDec()}>
+                Decrementar
+              </Button>
+              {/* Otra forma de usar el click es colocando la funcion del seteo directo en arrowfunction */}
+              <Button variant="secondary" onClick={() => setContador(0)}>
+                Resetear
+              </Button>
+              <Button variant="success" onClick={() => handleInc()}>
+                Incrementar
+              </Button>
+            </ButtonGroup>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };
