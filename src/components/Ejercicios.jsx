@@ -40,7 +40,15 @@ export const Ejercicios = () => {
                   <h3>Directorio Telefónico</h3>
                 </Accordion.Header>
                 <Accordion.Body>
-                  <HomeDir/>
+                  <HomeDir />
+                </Accordion.Body>
+              </Accordion.Item>
+              <Accordion.Item eventKey="3">
+                <Accordion.Header>
+                  <h3>Ejercicio #4</h3>
+                </Accordion.Header>
+                <Accordion.Body>
+                 <div>hola</div>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

@@ -9,17 +9,17 @@ export const Navegación = () => {
   return (
     <BrowserRouter>
       <nav className="d-flex align-items-center justify-content-center">
-        <Link to="/Inicio" className="nav-link link-success px-5">
+        <Link to="/" className="nav-link link-success px-5">
           <AiFillHome />
           Inicio
         </Link>
-        <Link className="nav-link link-success px-5" to="/Ejercicios">
+        <Link to="/Ejercicios" className="nav-link link-success px-5" >
           <SiExercism /> Ejercicios
         </Link>
       </nav>
       <Routes>
-        <Route path="/Inicio" element={<Inicio />}></Route>
-        <Route path="/Ejercicios" element={<Ejercicios />}></Route>
+        <Route path="/" element={<Inicio />} />
+        <Route path="/Ejercicios" element={<Ejercicios />} />
       </Routes>
     </BrowserRouter>
   );

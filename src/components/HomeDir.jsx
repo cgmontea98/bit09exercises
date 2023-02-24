@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,21 +9,19 @@ export const HomeDir = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(false);
 
-  async function apiDir() {
-    try {
-      const traer = await fetch("https://jsonplaceholder.typicode.com/users");
-      const datos = await traer.json();
-      setData(datos);
-      /*datos.map((dato) =>
-         console.log(
-          `NOMBRE: ${dato.name} // TELEFONO: ${dato.phone} //CORREO: ${dato.email}`
-        )
-      ); */
-    } catch {
-      setError("Problemas en el servidor, intenta más tarde");
+  useEffect(() => {
+    async function apiDir() {
+      try {
+        const traer = await fetch("https://jsonplaceholder.typicode.com/users");
+        const datos = await traer.json();
+        setData(datos);
+      } catch {
+        setError("Problemas en el servidor, intenta más tarde");
+      }
     }
-  }
-  apiDir();
+    apiDir();
+    //Sin lista dep solo será una rednz; con dep detecta cada actulizacion
+  }, []);
 
   return (
     <>
